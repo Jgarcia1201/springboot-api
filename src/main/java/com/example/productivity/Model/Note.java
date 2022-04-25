@@ -1,21 +1,47 @@
 package com.example.productivity.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "notes")
 public class Note {
-    private int noteId;
-    private int userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "note_id")
+    private int id;
+
+    @Column(name = "goal_id")
+    private int goalId;
+
+    @Column(name = "content")
     private String content;
 
+    @Column(name = "title")
+    private String title;
+
     public Note(int userId, String content) {
-        this.userId = userId;
+        this.goalId = userId;
         this.content = content;
     }
 
-    public int getUserId() {
-        return userId;
+    public Note() {
+
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getGoalId() {
+        return goalId;
+    }
+
+    public void setGoalId(int goalId) {
+        this.goalId = goalId;
     }
 
     public String getContent() {
@@ -24,5 +50,13 @@ public class Note {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
