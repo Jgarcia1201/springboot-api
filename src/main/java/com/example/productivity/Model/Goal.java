@@ -1,30 +1,45 @@
 package com.example.productivity.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "goals")
 public class Goal {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int goalId;
-    private int UserId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "goal_id")
+    private int id;
+
+    @Column(name = "user_id")
+    private int userId;
+
+    @Column(name = "title")
     private String title;
 
     public Goal(int userId, String title) {
-        UserId = userId;
+        this.userId = userId;
         this.title = title;
     }
 
+    public Goal() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(int userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getTitle() {
