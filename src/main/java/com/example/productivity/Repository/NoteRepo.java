@@ -11,6 +11,6 @@ import java.util.Optional;
 @CrossOrigin("http://localhost:4200")
 public interface NoteRepo extends CrudRepository<Note, Integer> {
 
-    Optional<Note[]> findByNoteId(int goalId);
+    Optional<Note[]> findByGoalId(int goalId);
 
 }

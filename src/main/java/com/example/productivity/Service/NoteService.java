@@ -19,8 +19,8 @@ public class NoteService {
         this.noteRepo = noteRepo;
     }
 
-    public Optional<Note[]> findByNoteId(int goalId) {
-        return noteRepo.findByNoteId(goalId);
+    public Optional<Note[]> findByGoalId(int goalId) {
+        return noteRepo.findByGoalId(goalId);
     }
 
     public Optional<Note> findById(int id) {
