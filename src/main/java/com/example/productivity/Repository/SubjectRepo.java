@@ -13,4 +13,5 @@ import java.util.Optional;
 public interface SubjectRepo extends CrudRepository<Subject, Integer> {
 
     Optional<Subject[]> findByUserId(int userId);
+
 }

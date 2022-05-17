@@ -19,12 +19,12 @@ public class NoteService {
         this.noteRepo = noteRepo;
     }
 
-    public Optional<Note[]> findByGoalId(int goalId) {
-        return noteRepo.findByGoalId(goalId);
-    }
-
     public Optional<Note> findById(int id) {
         return noteRepo.findById(id);
+    }
+
+    public Optional<Note[]> findByGoalId(int goalId) {
+        return noteRepo.findByGoalId(goalId);
     }
 
     public void updateNote(int id, Note note) {
@@ -32,13 +32,13 @@ public class NoteService {
         this.noteRepo.save(note);
     }
 
-    public void deleteNote(int id) {
-        this.noteRepo.deleteById(id);
-    }
-
     public int addNote(Note note) {
         Note newNote = noteRepo.save(note);
         return newNote.getId();
+    }
+
+    public void deleteNote(int id) {
+        this.noteRepo.deleteById(id);
     }
 
 }

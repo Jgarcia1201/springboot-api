@@ -17,14 +17,14 @@ public class NoteController {
         this.noteService = noteService;
     }
 
-    @GetMapping("/{noteId}")
-    public Optional<Note[]> findByGoalId(@PathVariable(value = "noteId") int goalId) {
-        return noteService.findByGoalId(goalId);
-    }
-
     @GetMapping("/deets/{id}")
     public Optional<Note> findById(@PathVariable(value = "id") int id) {
         return noteService.findById(id);
+    }
+
+    @GetMapping("/{noteId}")
+    public Optional<Note[]> findByGoalId(@PathVariable(value = "noteId") int goalId) {
+        return noteService.findByGoalId(goalId);
     }
 
     @PostMapping("/add")
