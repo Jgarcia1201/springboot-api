@@ -20,7 +20,11 @@ public class NoteService {
     }
 
     public Optional<Note[]> findByGoalId(int goalId) {
+<<<<<<< HEAD
         return noteRepo.findByNoteId(goalId);
+=======
+        return noteRepo.findByGoalId(goalId);
+>>>>>>> 3b0befee5427faa805366bf6496f811421511f56
     }
 
     public Optional<Note> findById(int id) {

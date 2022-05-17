@@ -18,7 +18,11 @@ public class NoteController {
     }
 
     @GetMapping("/{goalId}")
+<<<<<<< HEAD
     public Optional<Note[]> findByNoteId(@PathVariable(value = "goalId") int goalId) {
+=======
+    public Optional<Note[]> findByGoalId(@PathVariable(value = "goalId") int goalId) {
+>>>>>>> 3b0befee5427faa805366bf6496f811421511f56
         return noteService.findByGoalId(goalId);
     }
 
